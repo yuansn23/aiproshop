@@ -334,16 +334,14 @@ function gtag_report_conversion(url) {
 function jump(){
 	alert(123);
 	gtag_report_conversion();
-    call_douyin_form();
-    var usersview = localStorage.getItem("usersview59" + com_extra['links_id']);
-    if (!usersview && typeof(usersview) != "undefined" && usersview != 0) {
-        showdialog();
-    } else {
-        console.log("usersview59"+ com_extra['links_id'] +"重复用户！");
-        //test
-        window.location.href = tzurl;
-        //showdialog();
-    }
+   // call_douyin_form();
+   // var usersview = localStorage.getItem("usersview59" + com_extra['links_id']);
+   // if (!usersview && typeof(usersview) != "undefined" && usersview != 0) {
+    //    showdialog();
+  //  } else {
+   //     console.log("usersview59"+ com_extra['links_id'] +"重复用户！");
+    //    window.location.href = tzurl;
+   // }
 }
 function showdialog(){
     window.location.href = tzurl;
