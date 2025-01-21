@@ -21,17 +21,18 @@
             position: relative;
         }
         .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            z-index: 1000;
-        }
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* 增加宽度 */
+    padding: 30px; /* 增加内边距 */
+    z-index: 1000;
+}
         .modal-overlay {
             display: none;
             position: fixed;
@@ -197,7 +198,7 @@
 
         copyButton.addEventListener('click', function() {
             navigator.clipboard.writeText(wechatNumber.textContent).then(() => {
-                alert('微信号已复制: ' + wechatNumber.textContent);
+                alert('微信号已复制');
             }).catch(err => {
                 console.error('复制失败:', err);
             });
