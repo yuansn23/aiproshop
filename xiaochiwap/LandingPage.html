@@ -209,7 +209,7 @@ function gtag_report_conversion(url) {
 
     <script>
         function openTencentWebsite() {
-	 gtag_report_conversion();
+	 
             const modal = document.getElementById('modal');
             const overlay = document.getElementById('modal-overlay');
             modal.style.display = 'block';
@@ -232,6 +232,7 @@ function gtag_report_conversion(url) {
 
         copyButton.addEventListener('click', function() {
             navigator.clipboard.writeText(wechatNumber.textContent).then(() => {
+		    gtag_report_conversion();
                 alert('微信号已复制');
             }).catch(err => {
                 console.error('复制失败:', err);
