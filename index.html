@@ -1,6 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<style>
+        .my-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .my-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+       .my-modal-content {
+    background-color: white;
+    padding: 20px; /* 恢复内边距 */
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 恢复阴影 */
+    width: auto; /* 恢复为自动宽度 */
+    height: auto; /* 恢复为自动高度 */
+}
+        .my-modal-button {
+            margin: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .my-cancel-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        .my-copy-button {
+            background-color: #28a745;
+            color: white;
+        }
+    </style>
+	
+	
+	
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11565786358"></script>
 <script>
@@ -3326,6 +3377,22 @@
 
     <!-- main-js -->
     <script src="assets/js/script.js"></script>
+	
+	
+  <!--  执行方法-->
+ 
+
+ <div class="my-modal" id="myModal">
+        <div class="my-modal-content">
+            <h2>添加微信可优惠10元(限当天)</h2>
+            <p>添加微信：lishajunyu</p>
+			 <img src="./assets/images/icons/icon-18.png" alt="说明文字" style="width: 200px; height: 200px; margin-bottom: 20px;">
+            <button class="my-modal-button my-cancel-button" id="closeModal" onclick="closeModal()">取消</button>
+            <button class="my-modal-button my-copy-button" onclick="copyWeChat()">查看介绍</button>
+        </div>
+    </div>
+     
+	
 <!-- Event snippet for 出站点击 conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
@@ -3347,7 +3414,33 @@ function gtag_report_conversion(url) {
 
 
 
+<script>
+        function showAlert() {
+		gtag_report_conversion();  
+            document.getElementById("myModal").style.display = "flex";
+        }
 
+ 
+function copyWeChat() {
+           	gtag_report_conversion();    
+	window.open('about.html', '_blank');
+        }
+ 
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        
+
+        window.addEventListener("click", function(event) {
+            if (event.target === document.getElementById("myModal")) {
+                closeModal();
+            }
+        });
+    </script>
+	
+	
+<!--
 <script>
 function showAlert() {
 gtag_report_conversion();
@@ -3357,6 +3450,6 @@ gtag_report_conversion();
 	//alert("这是一个弹出窗口！");
 }
 </script>
-
+-->
 </body><!-- End of .page_wrapper -->
 </html>
